@@ -1,9 +1,13 @@
 package com.phonebook.demo.DBO;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "spam_count_info")
+@Getter
+@Setter
 public class SpamCountInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

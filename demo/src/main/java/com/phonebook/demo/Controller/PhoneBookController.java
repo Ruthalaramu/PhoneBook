@@ -1,5 +1,6 @@
 package com.phonebook.demo.Controller;
 
+import com.phonebook.demo.Common.ApiResponse;
 import com.phonebook.demo.Service.PhoneBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,8 @@ public class PhoneBookController {
     @Autowired
      private PhoneBookService phoneBookService;
 
-    public Mono<String> addMyContact(@RequestParam  String phoneNumber, @RequestParam  String contactName ) {
-       //return phoneBookService.addMyContact(phoneNumber,contactName).map(ResponseEntity::ok).defaultIfEmpty(ResponseEntity.badRequest().build());
-        return null;
+    public Mono<ResponseEntity<ApiResponse>> addMyContact(@RequestParam  String phoneNumber, @RequestParam  String contactName ) {
+       return phoneBookService.addMyContact(phoneNumber,contactName).map(ResponseEntity::ok).defaultIfEmpty(ResponseEntity.badRequest().build());
+
     }
 }

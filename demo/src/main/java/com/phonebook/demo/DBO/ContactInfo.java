@@ -15,8 +15,6 @@ public class ContactInfo {
     private int  id;
     private  int phoneNumber;
     private String  name;
-
-
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
